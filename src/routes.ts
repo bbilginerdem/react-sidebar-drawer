@@ -1,5 +1,6 @@
 import React from "react";
 import { MdHome, MdNotifications, MdEmail, MdSettings, MdLogout, MdOutlineCreate, MdDeleteForever } from 'react-icons/md';
+import { CreateMessages, Home, Logout, Messages, Notifications, RemovedMessages } from "./pages";
 
 export enum RoutePath {
   LOG_IN = '/login',
@@ -60,6 +61,44 @@ export const messagesSidebarNavItems: SidebarNavItem[] = [
   }
 ]
 
+export const routes: Route[] = [
+  {
+    name: "home",
+    path: RoutePath.HOME,
+    component: Home,
+    sidebarNavItems: defaultSidebarNavItems
+  },
+  {
+    name: "logout",
+    path: RoutePath.LOG_OUT,
+    component: Logout
+  },
+  {
+    name: "notifications",
+    path: RoutePath.NOTIFICATIONS,
+    component: Notifications,
+    sidebarNavItems: defaultSidebarNavItems
+  },
+  {
+    name: "messages",
+    path: RoutePath.MESSAGES,
+    component: Messages,
+    sidebarNavItems: messagesSidebarNavItems
+  },
+  {
+    name: "createMessage",
+    path: RoutePath.CREATE_MESSAGE,
+    component: CreateMessages,
+    sidebarNavItems: messagesSidebarNavItems
+  },
+  {
+    name: "removeMessages",
+    path: RoutePath.REMOVE_MESSAGES,
+    component: RemovedMessages,
+    sidebarNavItems: messagesSidebarNavItems
+  }
+]
+
 export interface SidebarNavItem {
   name: string;
   path: string;
@@ -69,6 +108,6 @@ export interface SidebarNavItem {
 export interface Route {
   name: string;
   path: RoutePath;
-  SidebarNavItems?: SidebarNavItem[];
+  sidebarNavItems?: SidebarNavItem[];
   component: React.ComponentType;
 }
