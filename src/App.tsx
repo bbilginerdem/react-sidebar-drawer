@@ -1,12 +1,24 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { NoMatch } from './pages';
+import { RoutePath, routes } from './routes';
 
 function App() {
   return (
     <Router>
-      <Route>
-
-      </Route>
+      <Routes>
+        <Route>
+          {routes.map(route =>
+            <Route
+              index={RoutePath.HOME === route.path}
+              path={route.path}
+              element={<route.component />}
+              key={route.name}
+            />
+          )}
+        </Route>
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
     </Router>
   );
 }

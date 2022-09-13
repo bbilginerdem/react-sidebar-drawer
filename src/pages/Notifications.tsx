@@ -1,1 +1,3 @@
-export default () => <div>Notifications</div>
+const Notifications = () => <div>Notifications</div>
+
+export default Notifications

@@ -1,1 +1,3 @@
-export default () => <div>Removed Messages</div>
+const RemovedMessages = () => <div>Removed Messages</div>
+
+export default RemovedMessages

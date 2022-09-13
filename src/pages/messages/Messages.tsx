@@ -1,1 +1,3 @@
-export default () => <div>Messages</div>
+const Messages = () => <div>Messages</div>
+
+export default Messages
