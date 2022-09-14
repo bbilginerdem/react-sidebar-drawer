@@ -1,4 +1,5 @@
 import React from "react";
+// react-icons is a library that provides a lot of icons
 import { MdHome, MdNotifications, MdEmail, MdSettings, MdLogout, MdOutlineCreate, MdDeleteForever } from 'react-icons/md';
 import { CreateMessages, Home, Logout, Messages, Notifications, RemovedMessages } from "./pages";
 
@@ -44,6 +45,11 @@ export const defaultSidebarNavItems: SidebarNavItem[] = [
 ]
 
 export const messagesSidebarNavItems: SidebarNavItem[] = [
+  {
+    name: 'home',
+    path: RoutePath.HOME,
+    icon: MdHome,
+  },
   {
     name: "Create Message",
     path: RoutePath.CREATE_MESSAGE,

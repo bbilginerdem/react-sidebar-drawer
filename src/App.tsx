@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Layout from './Layout/Layout';
 import { NoMatch } from './pages';
 import { RoutePath, routes } from './routes';
 
@@ -7,7 +8,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route>
+        <Route path="/" element={<Layout />}>
           {routes.map(route =>
             <Route
               index={RoutePath.HOME === route.path}
