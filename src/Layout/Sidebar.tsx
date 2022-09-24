@@ -17,7 +17,9 @@ const Sidebar = () => {
       }}>
         <Style.SidebarContent>
           {currentRoute?.sidebarNavItems?.map((item) => (
-            <item.icon />
+            <Style.SidebarItem>
+              <item.icon />
+            </Style.SidebarItem>
           ))}
         </Style.SidebarContent>
       </IconContext.Provider>
